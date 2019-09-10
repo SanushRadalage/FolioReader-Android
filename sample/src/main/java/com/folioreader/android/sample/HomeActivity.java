@@ -19,11 +19,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.folioreader.Config;
+import com.folioreader.Constants;
 import com.folioreader.FolioReader;
 import com.folioreader.model.HighLight;
 import com.folioreader.model.locators.ReadLocator;
@@ -61,13 +64,17 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                Config config = AppUtil.getSavedConfig(getApplicationContext());
-                if (config == null)
-                    config = new Config();
-                config.setAllowedDirection(Config.AllowedDirection.VERTICAL_AND_HORIZONTAL);
+                Config config = new Config()
+                        .setAllowedDirection(Config.AllowedDirection.ONLY_VERTICAL)
+                        .setDirection(Config.Direction.VERTICAL)
+                        //.setFont(Constants.FONT_SINHALA)
+                        .setFontSize(2)
+                        .setNightMode(true)
+                        .setShowTts(true);
 
-                folioReader.setConfig(config, true)
-                        .openBook(R.raw.accessible_epub_3);
+                FolioReader folioReader = FolioReader.get()
+                        .setConfig(config, true)
+                        .openBook(R.raw.tutu);
             }
         });
 

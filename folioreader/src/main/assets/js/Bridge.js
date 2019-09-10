@@ -268,6 +268,10 @@ $(function () {
             this.setFont("pt-sans");
         },
 
+        setFontSinhala: function() {
+            this.setFont("sinhala");
+        }
+
         base64encode: function (str) {
             return btoa(unescape(encodeURIComponent(str)));
         },

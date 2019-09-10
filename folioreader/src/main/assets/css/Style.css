@@ -249,6 +249,12 @@ html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 
     src: url('file:///android_asset/fonts/raleway/Raleway-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'sinhala';
+    src: url('file:///android_asset/fonts/sinhala/Dhananjayaweb.otf');
+}
+
+
 .andada {
      font-family: "andada", sans-serif;
  }
@@ -261,6 +267,11 @@ html.nightMode .highlight_underline {border-bottom: 2px solid rgba(240, 40, 20, 
 .raleway {
      font-family: "raleway", sans-serif;
  }
+
+ .sinhala {
+     font-family: "sinhala", sans-serif;
+ }
+
 
 html.textSizeOne { font-size: 13px !important; }
 html.textSizeTwo { font-size: 15px !important; }
